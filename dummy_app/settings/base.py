@@ -21,14 +21,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'csqwlmc8s55o($rt6ozh7u+ui9zb-et00w$d90j8$^!nvj41_r'
+SECRET_KEY = ''
 
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.sendgrid.com'
-EMAIL_HOST_USER = 'patore'
-EMAIL_MAIN = 'patore@protonmail.ch'
-EMAIL_HOST_PASSWORD = 'C@ugar35'
+EMAIL_HOST_USER = ''
+EMAIL_MAIN = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
@@ -123,18 +123,7 @@ DATABASES = {
     }
 }
 """
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8dvk38b1o0lvh',
-        'USER': 'ibcpatzkhxtifr',
-        'PASSWORD': 'EvVA8Tgjk0eTOPQH7kofdys1gO',
-        'HOST': 'ec2-54-83-22-233.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-"""
+
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 # Make email verification mandatory to avoid junk email accounts

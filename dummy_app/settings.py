@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'h##_9q!6=6y7w^umt^2j8+!yknqyr_^o_&(v8xo+eub_^swn(6'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -27,9 +27,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.sendgrid.com'
-EMAIL_HOST_USER = 'patore'
-EMAIL_MAIN = 'patore@protonmail.ch'
-EMAIL_HOST_PASSWORD = 'C@ugar35'
+EMAIL_HOST_USER = ''
+EMAIL_MAIN = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 EMAIL_USER_TLS = True
 
@@ -37,7 +37,7 @@ EMAIL_USER_TLS = True
 from django.conf import settings
 from django.core.mail import send_mail
 
-send_mail("subject", "here is the message", settings.EMAIL_MAIN, ["patore@protonmail.ch"], fail_silently=False)
+send_mail("subject", "here is the message", settings.EMAIL_MAIN, [""], fail_silently=False)
 """
 
 # Application definition
@@ -129,18 +129,6 @@ DATABASES = {
         'PASSWORD': 'dummy_app123Admin',
         'HOST': 'localhost',
         'PORT': '',
-    }
-}
-"""
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd8dvk38b1o0lvh',
-        'USER': 'ibcpatzkhxtifr',
-        'PASSWORD': 'EvVA8Tgjk0eTOPQH7kofdys1gO',
-        'HOST': 'ec2-54-83-22-233.compute-1.amazonaws.com',
-        'PORT': '5432',
     }
 }
 """
