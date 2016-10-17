@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+ {% if request.user.is_authenticated %}
+
+{{ form.media }}
+<ul class="row">
+
+
+  <li>{{ object.events }}</li>
+
+
+</ul>
+{% endif %}
+
+{% endblock content %}

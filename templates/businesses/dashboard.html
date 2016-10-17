@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 style="color: #A600BA;">{{ title }}</h1>
+
+{% if apply_form %}
+
+<h3>Terms and Conditions</h3>
+<div style="text-align: center;">
+    <form method="POST" action="">{% csrf_token %}
+        <ol>
+            <li>blahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>blahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</li>
+            <li>blahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</li>
+        </ol>
+        {{ apply_form.as_p }}</br>
+        <input type="submit">
+    </form>
+</div>
+
+{% endif %}
+
+{% if active %}
+
+<hr>
+<!-- Begin Events Section -->
+<div>
+    <div class="row">
+
+        <div class="col-sm-6 col-md-6">
+            <div class="panel " style="background-color: #A600BA; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-floppy-o aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ transactions }}</h1></div>
+                            <div>Number of times Saved</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6">
+            <div class="panel" style="background-color: #A600BA; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-hand-o-up aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ redeemedtransactions }}</h1></div>
+                            <div>Number of times Redeemed</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6">
+            <div class="panel" style="background-color: #A600BA; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ transactionconversionrate }} %</h1></div>
+                            <div>Conversion Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="http://www.dummy_appdeal.com">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-6">
+            <div class="panel" style="background-color: #A600BA; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>$ {{ redeemedtransactions }}</h1></div>
+                            <div>Billing Total</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="http://www.dummy_appdeal.com">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!--
+        <div class="col-sm-4 col-md-4">
+            <div class="panel" style="background-color: #f8666d; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-share aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ referrals }}</h1></div>
+                            <div>Deals Referred</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="panel" style="background-color: #f8666d; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ redeemedreferrals }}</h1></div>
+                            <div>Referred Deals Redeemed</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="panel" style="background-color: #f8666d; color: white;">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-shopping-cart aria-hidden='true' fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><h1>{{ referralconversionrate }} %</h1></div>
+                            <div>Referral Conversion Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer">
+                        <span class="pull-left"></span>
+                        <span class="pull-right"></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>-->
+
+    </div>
+
+</div>
+
+<!-- End Events Section -->
+<hr>
+
+{% endif %}
+
+{% endblock content %}
+

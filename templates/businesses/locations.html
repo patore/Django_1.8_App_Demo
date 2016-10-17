@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if request.user.is_staff %}
+
+<h1 style="color: #f8666d;">{{ title }}</h1>
+<h1 style="color: #f8666d;">Business Locations</h1>
+<div class="pull-right">
+    </br></br>
+    <a href="{% url 'business_location_create' %}" class="btn btn-default pull-right" style="color: white; background:#f8666d;" role="button">Add Location</a>
+</div>
+<hr>
+
+{% endif %}
+
+{% if request.user.is_staff %}
+
+<div class="row" style="text-align: center;">
+
+    <div>
+        <h3><i style="text-align: center; background: #ffffff; color: #00afc6;" class="fa fa-building-o fa-5x" aria-hidden="true"></i>
+        </h3>
+    </div>
+    <div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Location Name</th>
+                    <th>Address Line 1</th>
+                    <th>Address Line 2</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Phone</th>
+                    <th>Website</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in locations %}
+                <tr>
+                    <td>{{ obj.locationname }}</td>
+                    <td>{{ obj.address_line1 }}</td>
+                    <td>{{ obj.address_line2 }}</td>
+                    <td>{{ obj.city }}</td>
+                    <td>{{ obj.state }}</td>
+                    <td>{{ obj.zipcode }}</td>
+                    <td>{{ obj.phone }}</td>
+                    <td>{{ obj.websiteurl }}</td>
+                    <td><a href="{% url 'business_location_update' slug=obj.slug %}" class="btn btn-default pull-right" style="color: white; background:#f8666d;" role="button">Update Location</a></td>
+                    <td><a href="{% url 'business_location_delete' slug=obj.slug %}" class="btn btn-default pull-right" style="color: white; background:#f8666d;" role="button">Delete Location</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<hr>
+
+{% endif %}
+
+{% endblock content %}

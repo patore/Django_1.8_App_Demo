@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+	{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+	body{
+	background-image: url("{% static 'img/storebackground.jpg' %}");
+		background-size: 100% 120%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	.jumbotron {
+		background-color:transparent;
+		color: #FFF;
+		height: 100px;
+	}
+
+	{% endblock %}
+</style>
+
+{% block jumbotron %}
+
+<div class="jumbotron" style="text-align: center;">
+	<div class="row">
+		<div class='col-sm-12'>
+			<h3>Start engaging customers better with your dummy_app Business Account</h3>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div class="row">
+	<div class="col-xs-6 col-xs-offset-3">
+		<div class="thumbnail">
+			<h4></h4>
+			<form method="POST" action="" enctype="multipart/form-data">{% csrf_token %}
+				{{ form|crispy }}
+				<p>By clicking "Next" you are agreeing to our <a>terms and conditions</a></p>
+				<input type="submit" class="btn btn-lg btn-default" style="color: white; background:#f8666d;" value="Next"/>
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="{% static 'js/home/home.js' %}"></script>
+
+{% else %}
+
+<div class="content">
+	<div class="container" style="text-align: center;">
+
+		<img id="logo" src="{% static 'img/dummy_applogo.png' %}" height="250px" width="250px"></br></br>
+
+	</div>
+</div>
+
+{% endif %}
+
+{% endblock %}

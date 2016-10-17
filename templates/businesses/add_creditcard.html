@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+<style>
+	{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+	body{
+	background-image: url("{% static 'img/storebackground.jpg' %}");
+		background-size: 100% 120%;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+	.jumbotron {
+		background-color:transparent;
+		color: #FFF;
+		height: 100px;
+	}
+
+	{% endblock %}
+</style>
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+{{ form.media }}</br></br></br>
+
+<div style="text-align: center; color: white;" class="col-xs-6 col-xs-offset-3">
+    <h3>Add Credit Card info</h3>
+
+</div>
+
+{% endif %}
+
+{% endblock content %}

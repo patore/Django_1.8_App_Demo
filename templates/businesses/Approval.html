@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+</br></br></br></br></br></br></br></br>
+<div style="text-align: center;">
+    <h3>Please wait while we configure your account.
+        </br></br>This may take up to 24 hrs.
+        </br></br>We will notify you via email when the process is complete!
+        <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}</br></br>
+            <button class="btn btn-default btn-lg" style="color: white; background:#00afc6;" type="submit">{% trans 'Sign Out' %}</button>
+        </form>
+    </h3>
+</div>
+{% endblock content %}

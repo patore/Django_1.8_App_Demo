@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+	{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+
+
+	body{
+	background-image: url("{% static 'img/store.jpg' %}");
+		background-size: 100% 100%;
+			background-repeat: no-repeat;
+    background-attachment: fixed;
+	}
+
+	.jumbotron {
+		background-color: #00afc6;
+		color: #FFF;
+
+	}
+
+	{% endblock %}
+</style>
+
+
+{% block jumbotron %}
+<br><br>
+<div class="jumbotron" style="text-align: center;">
+	<div class="container">
+		<div class="row">
+			<div class='col-sm-12'>
+				<h1>dummy_app Business</h1></br>
+				<p>Give your customers the best experience in discovering your offerings in your area</p></br>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div style="text-align: center;">
+	<h3 style="text-align: center; color: #ffffff;">Why dummy_app</h3>
+	<hr>
+	<div class="row">
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="background-color: #8487af; color: white; height: 250px;" >
+				<div class="panel " style="background-color: #8487af; color: white;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3>Attract more Customers</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="caption">
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Create your campaigns and reach customers using the dummy_app app to discover
+								what businesses are offering in their city</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail"  style="background-color: orange; color: white; height: 250px;">
+				<div class="panel" style="background-color: orange; color: white;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3>Have customers talk about you</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="caption">
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Through our messaging platform, customers can talk about you offerings
+								with their friends so you can get more exposure and brand awareness</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4">
+			<div class="thumbnail" style="background-color: turquoise; color: white; height: 250px;">
+				<div class="panel " style="background-color: turquoise; color: white;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3>Appreciate Your Star Customers</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="caption">
+					<div class="row">
+						<div class="col-xs-12">
+							<p>Set rewards points that customers get for referring your business to their friends
+								so they feel appreciated. These points can in turn be redeemed as discounts </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row" style="text-align: center;">
+		<div class="col-sm-12 col-md-12">
+			<a class="btn btn-sm btn-block" href="/accounts/signup" style="color: white; background:#f8666d;"><h1>Apply for your Free 1 month beta Trial Here</h1></a>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<h3 style="text-align: center; color: #ffffff;">How it works!</h3>
+		<div class="col-sm-12 col-md-12">
+			<div class="thumbnail">
+				<h5>Apply for your free one month beta trial account <a href="/accounts/signup" style="color:#f8666d;">here</a>.
+					Set up your account, after your account has been configured you will get an email notification. Enter information for payment and create your discount deal or free deal item listing in your account dashboard.
+					Set preferences such as how many deals you will be offering(to cap traffic capacity your business can handle) for what period of time, expiration date,
+					how many reward points you will offer customers for telling their friends among other handy preferences. Customers will then discover your offerings in the city of preference through the app</h5>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<h3 style="text-align: center; color: #ffffff;">Pricing</h3>
+		<div class="col-sm-6 col-md-6">
+			<div class="thumbnail">
+				<div class="panel " style="background-color: #00afc6; color: white;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>50 	&cent;</h1>
+								<h3>If people save your offer on the app we charge a 50 &cent; advertising fee</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="caption">
+					<p></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-6">
+			<div class="thumbnail">
+				<div class="panel " style="background-color: #00afc6; color: white;">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>$2</h1>
+								<h3>If a customer shows up to your business to claim your offer, we charge $2 for the referral</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="caption">
+					<p></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<hr>
+<div class="row" style="text-align: center;">
+	<div class="col-sm-12 col-md-12">
+		<a class="btn btn-sm btn-block" href="/accounts/signup" style="color: white; background:#f8666d;"><h1>Apply for your Free 1 month beta Trial Here</h1></a>
+	</div>
+</div>
+<hr>
+<footer>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="{% static 'js/home/home.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 style="color: #f8666d;">{{ title }}</h1>
+
+<h1 style="color: #f8666d;">Support</h1>
+<hr>
+
+<div style="text-align: center;"></br></br></br></br></br></br>
+    <h1 style="color: #f8666d;">Please Send Email to Support@dummy_appdeal.com</h1>
+    <form action="mailto:info@dummy_appdeal.com" method="get" enctype="text/plain">
+        <p><input type="submit" name="submit" class="btn btn-default btn-lg" value="Send Now" />
+    </form>
+</div>
+
+{% endblock content %}

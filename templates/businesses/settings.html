@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if request.user.is_staff %}
+
+<h1 style="color: #f8666d;">{{ title }}</h1>
+<h1 style="color: #f8666d;">Settings</h1>
+<hr>
+<div class="row">
+    <div class="col-sm-3">
+        <h3>Password</h3>
+    </div>
+    <div class="col-sm-9"></br>
+        <a href="{% url 'account_change_password' %}" style="color: white; background: #8487af;"><button type="button" style="color: white; background:#f8666d;" class="btn btn-default">Change Password</button></a>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-3">
+        <h3>Account</h3>
+    </div>
+    <div class="col-sm-9"></br>
+        <a href="{% url 'account_change_password' %}" style="color: white; background: #8487af;"><button type="button" style="color: white; background:#f8666d;" class="btn btn-default">Deactivate Account</button></a>
+    </div>
+</div>
+<hr>
+</div>
+
+{% endif %}
+
+{% endblock content %}

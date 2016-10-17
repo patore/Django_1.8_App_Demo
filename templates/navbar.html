@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<!-- Static navbar -->
+{% if not request.user.is_authenticated %}
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:transparent;">
+  {% else %}
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#A600BA;">
+    {% if request.user.is_authenticated %}
+    <a class="navbar-brand pull-left" href="{% url 'home' %}" style="color: #FFFFFF"><i>dummy_app</i> | {{ request.user|upper }}</a>
+    {% endif %}
+    {% endif %}
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" style="background-color:#00afc6; color: red;" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {% if request.user.is_authenticated %}
+        <a class="navbar-brand pull-left" href="{% url 'home' %}" style="color: #FFFFFF"><i></i></a>
+        {% else %}
+        <a class="navbar-brand" href="{% url 'home' %}" style="color: #FFFFFF"><img id="mainlogo" src="{% static 'img/logo.png' %}" height="38px" width="100px"></a>
+        {% endif %}
+      </div>
+      <div id="navbar" class="navbar-collapse collapse pull-right">
+
+        <ul class="nav navbar-nav navbar-right">
+          {% if not request.user.is_authenticated %}
+          <li><a class="btn btn-sm" href="{% url 'dummy_app_business' %}" style="color: white;">For Business</a></li>
+          <li><a class="btn btn-sm" href="/accounts/login" style="color: white;">Business login</a></li>
+          {% else %}
+          <li><a class="btn btn-sm btn-default pull-right" href="/accounts/logout" style="color: white; background:#A600BA;">Logout</a></li>
+          {% endif %}
+        </ul>
+
+      </div>
+    </div>
+    {% if not request.user.is_authenticated %}
+  </nav>
+  {% else %}
+</nav>
+{% endif %}
+

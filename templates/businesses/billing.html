@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+<style>
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+}
+tr, td {
+    padding: 15px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;
+    background-color: #f1f1c1;
+
+}
+</style>
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-4">
+        <h1 style="color: #f8666d;">Billing</h1>
+    </div>
+    <div class="col-sm-4">
+
+    </div></br>
+
+    <div class="col-sm-4 pull-right">
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-sm-3">
+        <h3>Card Information</h3>
+    </div>
+    <div class="col-sm-9">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>Name on Card</th>
+                    <th>Billing Address</th>
+                    <th>Card Number</th>
+                    <th>CVV</th>
+                    <th>Expiration</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <tr>
+                    <td>{{ object.nameoncreditcard }}</td>
+                    <td>{{ object.creditcardbillingaddress }}</td>
+                    <th>{{ object.creditcardnumber }}</th>
+                    <th>{{ object.cvv}}</th>
+                    <th>{{ object.expiration}}</th>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+{% endblock content %}

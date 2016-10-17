@@ -1,0 +1,42 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+<style>
+	{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+
+	body {
+		background-color:#f8666d;
+		color: #FFF;
+		height: 100%;
+	}
+
+	{% endblock %}
+</style>
+
+{% block content %}
+</br></br></br></br></br></br></br></br></br>
+
+<div class='col-sm-6 col-sm-offset-3' style="text-align: center; background-color: #00afc6;">
+  <h3>Sign In</h3>
+
+{% get_providers as socialaccount_providers %}
+
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button class="primaryAction btn btn-default btn-block" type="submit" style="background-color: #f8666d; color: #FFFFFF;">{% trans "Sign In" %}</button>
+</form>
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <a class="btn btn-sm" style="color: white;"href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+</br>
+</div>
+{% endblock %}

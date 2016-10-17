@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+
+{% block head_title %}Welcome | {{ block.super }}{% endblock %}
+
+<style>
+	{% block style %}
+	.navbar-static-top {
+		margin-bottom: 0px !important;
+	}
+
+	body {
+		background-image: url("{% static 'img/Online-Customer-Experience.jpg' %}");
+		background-size: 100% 120%;
+		background-repeat: no-repeat;
+		color: #FFF;
+		height: 100%;
+		background-attachment: fixed;
+	}
+
+	{% endblock %}
+</style>
+
+{% block content %}
+
+</br></br></br></br></br></br></br>
+<div class="content">
+	<div class="container" style="text-align: center;">
+
+		<img id="logo" src="{% static 'img/dummy_applogo.png' %}" height="250px" width="250px"></br></br>
+		<strong><h3 style="text-align: center; color:white;">Know Before You Go!</h3></strong></br>
+		<button style="background-color:#00afc6; color:#ffffff;" class="btn btn-default">Download on iOS</button>  <button style="background-color:#00afc6; color:#ffffff;" class="btn btn-default">Coming Soon to Android</button>
+
+	</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="{% static 'js/home/home.js' %}"></script>
+</br></br></br></br></br></br></br></br></br>
+
+{% endblock %}

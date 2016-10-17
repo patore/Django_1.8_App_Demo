@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+ {% if request.user.is_authenticated %}
+<h1>Event Tags</h1>
+<p>
+    <form method="GET" action="">
+    <input type="text" name="q" placeholder="Search" value="{{ request.GET.q }}">
+    <input type="submit" value="Search"/>
+</form>
+</p>
+{{ form.media }}
+<ul class="row">
+{% for obj in object_list %}
+
+  <li><a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a> ({{ obj.events.count }} event{% if obj.events.count > 1 %}s{% endif %})</li>
+
+
+{% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock content %}
